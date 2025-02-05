@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg1 {
+    background-image: url("https://images5.alphacoders.com/324/324880.jpg");
+}
+
+.bg2 {
+    background-image: url("https://images8.alphacoders.com/453/453876.jpg");
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    color: white;
+    background-color: black;
+}

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: skyblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.content {
+    align-items: center;
+    width: 20em;
+}
+.content h1 {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    background-color: #ffffff;
+    height: 40px;
+    width: 100%;
+}
+
+.dropdown option {
+    background-color: #ffffff;
+}
