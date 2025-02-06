@@ -8,16 +8,15 @@ body, html {
 .container {
     display: grid;
     justify-content: center;
-    text-align: center; 
 }
 
 .card {
+    text-align: center; 
     background-color: rgb(168, 168, 235);
     height: auto;
     width: auto;
     border: 1px solid black;
     border-radius: 10px;
-    justify-items: center;
 }
 
 .card-image img {
