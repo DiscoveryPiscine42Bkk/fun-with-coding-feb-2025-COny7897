@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,38 +18,42 @@
             height: 100vh;
         }
 
-        input, select, button {
+        input,
+        select,
+        button {
             padding: 10px;
             margin: 5px;
             font-size: 16px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <input type="number" id="num1" />
-        <select name="" id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-            <option value="%">%</option>
-        </select>
-        <input type="number" id="num2" />
-        <button onclick="calc()">Try me!</button>
+        <div class="content">
+            <input type="text" id="num1" />
+            <select name="" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="num2" />
+            <button onclick="calc()">Try me!</button>
+        </div>
     </div>
 
     <script>
         const operator = document.getElementById('operator');
         const button = document.getElementById('tryme');
-        onti
         function calc() {
             var num1 = parseFloat(document.getElementById('num1').value);
             var num2 = parseFloat(document.getElementById('num2').value);
             var op = operator.value;
             var result;
-            if ((op === '/' || op === '%') && num2 === 0) {
-                result = 'It’s over 9000!';
+            if (((op === '/' || op === '%') && num2 === 0)) {
+                result = 'It\'s over 9000!';
                 console.log(result);
                 alert(result);
             } else {
@@ -71,15 +76,21 @@
                     default:
                         break;
                 }
-                if (isNaN(result) || result < 0) {
+                if (isNaN(result) || result < 0 || num1 < 0 || num2 < 0) {
                     result = 'Error :(';
-                }else{
+                } else {
                     console.log(result);
                 }
                 alert(result);
             }
 
         }
+        setInterval(myTimer, 30000);
+
+        function myTimer() {
+            alert('Please, use me . . .');
+        }
     </script>
 </body>
+
 </html>
