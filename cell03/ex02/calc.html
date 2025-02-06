@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="num1" />
+        <select name="" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="num2" />
+        <button onclick="calc()">Try me!</button>
+    </div>
+
+    <script>
+        const operator = document.getElementById('operator');
+        const button = document.getElementById('tryme');
+        onti
+        function calc() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var op = operator.value;
+            var result;
+            if ((op === '/' || op === '%') && num2 === 0) {
+                result = 'It’s over 9000!';
+                console.log(result);
+                alert(result);
+            } else {
+                switch (op) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        break;
+                    case '%':
+                        result = num1 % num2;
+                        break;
+                    default:
+                        break;
+                }
+                if (isNaN(result) || result < 0) {
+                    result = 'Error :(';
+                }else{
+                    console.log(result);
+                }
+                alert(result);
+            }
+
+        }
+    </script>
+</body>
+</html>

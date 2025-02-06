@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div onclick="blow()" onpointerout="shrink()" class="balloon" style="height: 200px; width: 200px; background-color: red; border-radius: 100px;"></div>
+    <script>
+        const colors = ["red", "green", "blue"];
+        let colorIndex = 0;
+        function blow() {
+            let balloon = document.querySelector('.balloon');
+            colorIndex = (colorIndex + 1) % colors.length;
+            balloon.style.backgroundColor = colors[colorIndex];
+            balloon.style.height = parseInt(balloon.style.height) + 10 + "px";
+            balloon.style.width = balloon.style.height; 
+            balloon.style.borderRadius = parseInt(balloon.style.height) / 2 + "px";
+            if (balloon.style.height > "420px") {
+                balloon.style.height = "200px";
+                balloon.style.width = "200px";
+            } 
+        }
+        
+        function shrink() {
+            let balloon = document.querySelector('.balloon');
+            colorIndex = (colorIndex + 2) % colors.length;
+            balloon.style.backgroundColor = colors[colorIndex];
+            balloon.style.height = parseInt(balloon.style.height) - 5 + "px";
+            balloon.style.width = balloon.style.height;
+            balloon.style.borderRadius = parseInt(balloon.style.height) / 2 + "px";
+            if (balloon.style.height < "200px") {
+                balloon.style.height = "200px";
+                balloon.style.width = "200px";
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
