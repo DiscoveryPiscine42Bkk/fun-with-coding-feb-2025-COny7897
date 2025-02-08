@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <style>
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            margin: 10px;
+            padding: 0;
+            background-color: #98EECC;
+        }
+
+        .container {
+            width: 400px;
+            margin: 20px auto;
+            background-color: #FBFFDC;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #newbtn {
+            background-color: #A4907C;
+            color: white;
+            width: 50%;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #ft_list {
+            display: grid;
+        }
+
+        #ft_list div {
+            background-color: #D0F5BE;
+            color: #000;
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+        <button id="newbtn">New</button>
+        <div id="ft_list">
+    
+        </div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+
+</html>

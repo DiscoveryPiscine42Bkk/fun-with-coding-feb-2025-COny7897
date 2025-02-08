@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="balloon" style="height: 200px; width: 200px; background-color: red; border-radius: 50%;"></div>
+    <script>
+        const colors = ["red", "green", "blue"];
+        let colorIndex = 0;
+
+        $(document).ready(function () {
+            $("div").click(function () {
+                colorIndex = (colorIndex + 1) % colors.length;
+                $(".balloon").css({
+                    "height": parseInt($(".balloon").css("height")) + 10 + "px",
+                    "width": parseInt($(".balloon").css("width")) + 10 + "px",
+                    "backgroundColor": colors[colorIndex]
+                });
+                if (parseInt($(".balloon").css("height")) > 420) {
+                    $(".balloon").css({
+                        "height": "200px",
+                        "width": "200px",
+                    });
+                }
+            });
+
+
+            $("div").on("pointerout", function () {
+                colorIndex = (colorIndex + 2) % colors.length;   
+                if ( $(".balloon").css("height") > "200px") {
+                    $(".balloon").css({
+                        "height": parseInt($(".balloon").css("height")) - 5 + "px",
+                        "width": parseInt($(".balloon").css("width")) - 5 + "px",
+                        "backgroundColor": colors[colorIndex]
+                    });
+            }
+            });
+        });
+    </script>
+</body>
+
+</html>
